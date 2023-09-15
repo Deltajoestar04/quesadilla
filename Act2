@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author Admin
+ */
+public class Act2 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String oracion = sc.nextLine();
+        String nuevaOracion = oracion.replaceAll("-[() ]", "");
+        int tijuana = 0;
+        int hermosillo = 0;
+        int guaymas = 0;
+        int missingno = 0;
+
+        String[] sincomas = nuevaOracion.split(",");
+
+        for (String xd : sincomas) {
+
+            if (xd.startsWith("664")) {
+                tijuana = tijuana + 1;
+            } else if (xd.startsWith("662")) {
+                hermosillo = hermosillo + 1;
+            } else if (xd.startsWith("622")) {
+                guaymas = guaymas + 1;
+            } else {
+                missingno = missingno + 1;
+            }
+        }
+
+        System.out.println("cantidad de numeros en Tijuana: " + tijuana);
+        System.out.println("cantidad de numeros en Hermosillo: " + hermosillo);
+        System.out.println("cantidad de numeros en Guaymas: " + guaymas);
+        System.out.println("cantidad de numeros en Desconocidos: " + missingno);
+
+    }
+
+}   
